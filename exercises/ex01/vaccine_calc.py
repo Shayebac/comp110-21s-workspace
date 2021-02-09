@@ -39,6 +39,5 @@ tomorrow: datetime = today + one_day
 tomorrow.strftime("%B %d, %Y")
 fortnight: timedelta = timedelta(7 + 7)
 future: datetime = today + fortnight
-accomplished: datetime = today + days_to_target
-print("We will reach", (target_percent_vaccinated), "% vaccination in", 
-(days_to_target), "days, which falls on", (print(accomplished.strftime("%B %d, %Y"))), ".")
+accomplished = datetime.now() + timedelta(days=int(days_to_target))
+print("We will reach", (target_percent_vaccinated),"% vaccination in", (days_to_target), "days, which falls on", (accomplished.strftime("%B %d, %Y")),".")
