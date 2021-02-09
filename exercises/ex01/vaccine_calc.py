@@ -18,12 +18,22 @@ from datetime import timedelta
 
 
 # Begin your solution here...
-population = input("Population: ")
-doses_administered = input("Doses administered: ")
-doses_per_day = input("Doses per day: ")
-target_percent_vaccinated = input("Target percent vacinated: ")
+population = int(input("Population: "))
+doses_administered = int(input("Doses administered: "))
+doses_per_day = int(input("Doses per day: "))
+target_percent_vaccinated = int(input("Target percent vacinated: "))
 
-
+people_vaccinated: float = (doses_administered / 2)
+people_per_day: float = (doses_per_day / 2)
+percent_complete: float = (people_vaccinated / population)
+percent_remaining: int = ((target_percent_vaccinated) - (percent_complete * 100))
+people_remaining: float = ((percent_remaining / 100) * population)
+doses_needed: int = (people_remaining * 2 )
+days_to_target: float = (doses_needed / doses_per_day)
+days_to_target = round(days_to_target)
+target_percent_vaccinated: str 
+days_to_target: str
+print("We will reach",(target_percent_vaccinated),"% vaccination in", (days_to_target),"days, which falls on ()")
 
 today: datetime = datetime.today()
 today.strftime("%B %d, %Y")
@@ -33,4 +43,3 @@ tomorrow.strftime("%B %d, %Y")
 fortnight: timedelta = timedelta(7 + 7)
 future: datetime = today + fortnight 
 
-print("We will reach  vaccination in () days, which falls on ()")
