@@ -21,11 +21,11 @@ if fortune <= 50:
     if fortune <= 25:
         print("You will receieve good news very soon.")
     else:
-            print("Luck is coming your way.")
+        print("Luck is coming your way.")
 else:
     if fortune <= 75:
         print("Your biggest dream will soon come true.")
     else: 
-            print("Your hard work will soon pay off.")
+         print("Your hard work will soon pay off.")
 
 print("Now, go spread positive vibes!")                   
