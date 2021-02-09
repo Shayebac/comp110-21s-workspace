@@ -26,6 +26,6 @@ else:
     if fortune <= 75:
         print("Your biggest dream will soon come true.")
     else: 
-         print("Your hard work will soon pay off.")
+        print("Your hard work will soon pay off.")
 
 print("Now, go spread positive vibes!")                   

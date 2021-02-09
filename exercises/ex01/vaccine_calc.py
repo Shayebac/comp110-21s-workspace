@@ -26,8 +26,8 @@ target_percent_vaccinated = int(input("Target percent vacinated: "))
 people_vaccinated: float = (doses_administered / 2)
 people_per_day: float = (doses_per_day / 2)
 percent_complete: float = (people_vaccinated / population)
-percent_remaining: int = ((target_percent_vaccinated) - (percent_complete * 100))
-people_remaining: int = ((percent_remaining / 100) * population)
+percent_remaining: float = ((target_percent_vaccinated) - (percent_complete * 100))
+people_remaining: float = ((percent_remaining / 100) * population)
 doses_needed: float = (people_remaining * 2)
 days_to_target: float = (doses_needed / doses_per_day)
 days_to_target = round(days_to_target)
@@ -40,4 +40,5 @@ tomorrow.strftime("%B %d, %Y")
 fortnight: timedelta = timedelta(7 + 7)
 future: datetime = today + fortnight
 accomplished: datetime = today + days_to_target
-print("We will reach", (target_percent_vaccinated), "% vaccination in", (days_to_target), "days, which falls on", (print(accomplished.strftime("%B %d, %Y"))), ".")
+print("We will reach", (target_percent_vaccinated), "% vaccination in", 
+(days_to_target), "days, which falls on", (print(accomplished.strftime("%B %d, %Y"))), ".")
