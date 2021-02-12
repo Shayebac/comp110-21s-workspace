@@ -8,14 +8,11 @@ __author__ = "730309878"
 def main() -> None:
     """The entrypoint of the program, when run as a module."""
     print("Your fortune cookie says...")
-    # TODO 2: Print the result of calling your fortune_cookie function.
     print(fortune_cookie())
     print("Now, go spread positive vibes!")
 
 
-# TODO 1: Define your fortune_cookie function here.
 def fortune_cookie() -> str:
-    """Single, random fortune string."""
     fortune = (randint(1, 100))
 
     if fortune <= 50:
