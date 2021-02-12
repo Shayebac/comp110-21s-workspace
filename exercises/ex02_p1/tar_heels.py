@@ -8,9 +8,9 @@ def main() -> None:
     choice: int = int(input("Enter an int: "))
     print(tar_heels(choice))
 
+
 def tar_heels(choice: int) -> str:
     """Definition of the function."""
-
     if int(choice) % 2 == 0 and int(choice) % 7 == 0:
         return ("TAR HEELS")
     elif int(choice) % 2 == 0:
@@ -19,6 +19,7 @@ def tar_heels(choice: int) -> str:
         return ("HEELS")
     else:
         return ("CAROLINA")
+
 
 if __name__ == "__main__":
     main()
