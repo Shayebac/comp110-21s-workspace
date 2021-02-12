@@ -13,6 +13,7 @@ def main() -> None:
 
 
 def fortune_cookie() -> str:
+    """Single, random fortune string."""
     fortune = (randint(1, 100))
 
     if fortune <= 50:
@@ -25,6 +26,7 @@ def fortune_cookie() -> str:
             return ("Your biggest dream will soon come true.")
         else: 
             return ("Your hard work will soon pay off.")
+
 
 # Python Idiom for "starting" the program when run as a module.
 # The special dunder variable __name__ will be "__main__" when run as module. 
