@@ -21,7 +21,6 @@ def main() -> None:
 def days_to_target(population: int, doses: int, doses_per_day: int, target: int) -> int: 
     """Define days to target function."""
     people_vaccinated: float = (doses / 2)
-    people_per_day: float = (doses_per_day / 2)
     percent_complete: float = (people_vaccinated / population)
     percent_remaining: float = ((target) - (percent_complete * 100))
     people_remaining: float = ((percent_remaining / 100) * population)
@@ -39,7 +38,6 @@ def future_date(days: int) -> str:
     tomorrow: datetime = today + one_day
     tomorrow.strftime("%B %d, %Y")
     fortnight: timedelta = timedelta(7 + 7)
-    future: datetime = today + fortnight
     accomplished: datetime = datetime.now() + timedelta(days)
     future_date = accomplished.strftime("%B %d, %Y")
     return future_date
