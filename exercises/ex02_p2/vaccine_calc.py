@@ -12,8 +12,10 @@ def main() -> None:
     doses_per_day: int = int(input("Doses per day: "))
     target: int = int(input("Target percent vaccinated: "))
     call_one: int = int(days_to_target(population, doses, doses_per_day, target))
-    call_two: str = str(future_date(days_to_target))
-    print("We will reach", (target), "% vaccination in", (days_to_target), "days, which falls on", (future_date.strftime("%B %d, %Y")), "." )
+    call_two: str = str(future_date)
+    print("We will reach", (target), end="")
+    print("% vaccination in", (call_one), "days, which falls on", (call_two), end="")
+    print(".")
 
 
 def days_to_target(population: int, doses: int, doses_per_day: int, target: int) -> int: 
@@ -29,7 +31,7 @@ def days_to_target(population: int, doses: int, doses_per_day: int, target: int)
     return days_to_target
     
 
-def future_date(days_to_target: int) -> str:
+def future_date(days: int) -> str:
     """Return date."""
     today: datetime = datetime.today()
     today.strftime("%B %d, %Y")
@@ -38,7 +40,8 @@ def future_date(days_to_target: int) -> str:
     tomorrow.strftime("%B %d, %Y")
     fortnight: timedelta = timedelta(7 + 7)
     future: datetime = today + fortnight
-    future_date = datetime.now() + timedelta(days_to_target=str(days_to_target))
+    accomplished = datetime.now() + timedelta(days=int(days_to_target))
+    future_date = accomplished.strftime("%B %d, %Y")
     return future_date
 
 
