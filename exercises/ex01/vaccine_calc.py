@@ -31,12 +31,7 @@ doses_needed: float = (people_remaining * 2)
 days_to_target: float = (doses_needed / doses_per_day)
 days_to_target = round(days_to_target)
 
-today: datetime = datetime.today()
-today.strftime("%B %d, %Y")
-one_day: timedelta = timedelta(1)
-tomorrow: datetime = today + one_day
-tomorrow.strftime("%B %d, %Y")
-fortnight: timedelta = timedelta(7 + 7)
+
 accomplished = datetime.now() + timedelta(days=int(days_to_target))
 
 print("We will reach", (target_percent_vaccinated), end="")

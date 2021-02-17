@@ -32,12 +32,6 @@ def days_to_target(population: int, doses: int, doses_per_day: int, target: int)
 
 def future_date(days: int) -> str:
     """Return date."""
-    today: datetime = datetime.today()
-    today.strftime("%B %d, %Y")
-    one_day: timedelta = timedelta(1)
-    tomorrow: datetime = today + one_day
-    tomorrow.strftime("%B %d, %Y")
-    fortnight: timedelta = timedelta(7 + 7)
     accomplished: datetime = datetime.now() + timedelta(days)
     future_date = accomplished.strftime("%B %d, %Y")
     return future_date
