@@ -6,11 +6,12 @@ from random import randint
 
 points: int
 player: str 
-welcome: str = str
-guess: int = int
-guesses: int = int
+welcome = str
+guess = int
+guesses = int
 SAD_FACE: str 
 CELEBRATION_EMOJI: str 
+
 
 def main() -> None: 
     """Entrypoint of Adventure."""
@@ -22,14 +23,15 @@ def main() -> None:
         print(Hint(guess))
     elif choice == "B":
         print(Hangman(guesses))
-    elif choice =="C":
+    elif choice == "C":
         print(f"Thank you for playing. You had {points} point(s). Goodbye!")
     
 
 def greet(welcome: str) -> None:
     """Welcome Statement."""
     print("Welcome to the Number Guessing Game!")
-    print("You can either guess a number and get hints, or guess a number and play hangman. You have five tries in each game.")
+    print("You can either guess a number and get hints, or guess a number and play hangman.")
+    print("You have five tries in each game.")
     global SAD_FACE
     SAD_FACE = ("\U0001F625")
     print(f"If you do not guess the right number in five tries, you lose {SAD_FACE}.")
@@ -47,10 +49,10 @@ def Hint(guess: int) -> None:
     global CELEBRATION_EMOJI
     CELEBRATION_EMOJI = ("\U0001F389")
     while points < 5:
-        guess: int = (int(input("Guess a number, 1 through 100. ")))
-        number = (randint(1,100))
-        if guess != number:
-            if guess < number:
+        guess1: int = (int(input("Guess a number, 1 through 100. ")))
+        number = (randint(1, 100))
+        if guess1 != number:
+            if guess1 < number:
                 points += 1
                 print("Try guessing a greater number")
             else:
@@ -69,7 +71,7 @@ def Hangman(guesses: int) -> int:
     global CELEBRATION_EMOJI
     CELEBRATION_EMOJI = ("\U0001F389")
     guess_one: int = input("Guess a number, 1 through 10 ")
-    number = (randint(1,10))
+    number = (randint(1, 10))
     points: int = 0
     while points < 5: 
         if guess_one == number:
@@ -79,8 +81,8 @@ def Hangman(guesses: int) -> int:
             points += 1
             guess_two: int = input("Wrong. You now have a head. Guess again. You have four tries left. ")
             if guess_two == number:
-                    points += 1
-                    print(f"Wow, great job. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
+                points += 1
+                print(f"Wow, great job. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
             else:
                     points += 1
                     guess_three: int = input("Wrong. You now have a body. Guess again. You have three tries left. ")
@@ -91,17 +93,17 @@ def Hangman(guesses: int) -> int:
                         points += 1
                         guess_four: int = input("Wrong. You now have two arms. Guess again. You have two tries left. ")
                         if guess_four == number:
-                            points =+ 1
+                            points += 1
                             print(f"Wow, great job. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
                         else:
                             points += 1
-                            guess_five: int = input("Wrong. You now have two legs. This is your last guess. Guess again. ")
+                            guess_five: int = input("Wrong. You now have two legs. This is your last guess. ")
                             if guess_five == number:
-                                    points =+ 1
-                                    print(f"There you go. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
+                                points += 1
+                                print(f"There you go. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
                             else:
-                                    points += 1
-                                    print("I am sorry you are out of tries. You lose. Try again some other time.")
+                                points += 1
+                                print("I am sorry you are out of tries. You lose. Try again some other time.")
     return Hangman
 
                 
