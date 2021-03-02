@@ -4,7 +4,7 @@ __author__ = "730309878"
 
 from random import randint
 
-points: int
+points: int 
 player: str 
 welcome = str
 guess = int
@@ -15,21 +15,21 @@ CELEBRATION_EMOJI: str
 
 def main() -> None: 
     """Entrypoint of Adventure."""
-    print(greet(welcome))
+    greet("Welcome to the Number Guessing Game!")
     global points
     points = 0
     choice: str = input("Which would you like to do? A: Hint game, B: Hangman game, C: Quit ")
     if choice == "A":
-        print(Hint(guess))
+        (Hint())
     elif choice == "B":
-        print(Hangman(guesses))
+        points = (Hangman(points))
     elif choice == "C":
         print(f"Thank you for playing. You had {points} point(s). Goodbye!")
     
-
-def greet(welcome: str) -> None:
+    
+def greet(welcome) -> None:
     """Welcome Statement."""
-    print("Welcome to the Number Guessing Game!")
+    print(welcome);
     print("You can either guess a number and get hints, or guess a number and play hangman.")
     print("You have five tries in each game.")
     global SAD_FACE
@@ -38,10 +38,9 @@ def greet(welcome: str) -> None:
     global player
     player = input("What is your name? ")
     print(f"Welcome {player}.")
-    return greet
 
 
-def Hint(guess: int) -> None: 
+def Hint() -> None: 
     """Option to play game 1."""
     print(f"{player}, welcome to the hint game!")
     global points
@@ -62,15 +61,14 @@ def Hint(guess: int) -> None:
             points += 1
             print(f"Way to go! You guessed it. Game over! {CELEBRATION_EMOJI}")
     print("You are out of guesses. Game over. Try again some other time.")
-    return Hint
     
-
-def Hangman(guesses: int) -> int: 
+    
+def Hangman(points: int) -> int: 
     """Option to play game 2."""
     print(f"{player}, welcome to hangman.")
     global CELEBRATION_EMOJI
     CELEBRATION_EMOJI = ("\U0001F389")
-    guess_one: int = input("Guess a number, 1 through 10 ")
+    guess_one: int = input("Guess a number, 1 through 10. ")
     number = (randint(1, 10))
     points: int = 0
     while points < 5: 
@@ -104,7 +102,7 @@ def Hangman(guesses: int) -> int:
                             else:
                                 points += 1
                                 print("I am sorry you are out of tries. You lose. Try again some other time.")
-    return Hangman
+    return points
 
                 
 if __name__ == "__main__":
