@@ -29,7 +29,7 @@ def main() -> None:
     
 def greet(welcome) -> None:
     """Welcome Statement."""
-    print(welcome);
+    print(welcome)
     print("You can either guess a number and get hints, or guess a number and play hangman.")
     print("You have five tries in each game.")
     global SAD_FACE
@@ -82,26 +82,26 @@ def Hangman(points: int) -> int:
                 points += 1
                 print(f"Wow, great job. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
             else:
+                points += 1
+                guess_three: int = input("Wrong. You now have a body. Guess again. You have three tries left. ")
+                if guess_three == number:
                     points += 1
-                    guess_three: int = input("Wrong. You now have a body. Guess again. You have three tries left. ")
-                    if guess_three == number:
+                    print(f"Wow, great job. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
+                else:
+                    points += 1
+                    guess_four: int = input("Wrong. You now have two arms. Guess again. You have two tries left. ")
+                    if guess_four == number:
                         points += 1
                         print(f"Wow, great job. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
                     else:
                         points += 1
-                        guess_four: int = input("Wrong. You now have two arms. Guess again. You have two tries left. ")
-                        if guess_four == number:
+                        guess_five: int = input("Wrong. You now have two legs. This is your last guess. ")
+                        if guess_five == number:
                             points += 1
-                            print(f"Wow, great job. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
+                            print(f"There you go. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
                         else:
                             points += 1
-                            guess_five: int = input("Wrong. You now have two legs. This is your last guess. ")
-                            if guess_five == number:
-                                points += 1
-                                print(f"There you go. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
-                            else:
-                                points += 1
-                                print("I am sorry you are out of tries. You lose. Try again some other time.")
+                            print("I am sorry you are out of tries. You lose. Try again some other time.")
     return points
 
                 
