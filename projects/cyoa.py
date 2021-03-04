@@ -15,7 +15,7 @@ CELEBRATION_EMOJI: str
 
 def main() -> None: 
     """Entrypoint of Adventure."""
-    greet("Welcome to the Number Guessing Game!")
+    greet(welcome)
     global points
     points = 0
     choice: str = input("Which would you like to do? A: Hint game, B: Hangman game, C: Quit ")
@@ -30,6 +30,7 @@ def main() -> None:
 def greet(welcome) -> None:
     """Welcome Statement."""
     print(welcome)
+    print("Welcome to the Number Guessing Game!")
     print("You can either guess a number and get hints, or guess a number and play hangman.")
     print("You have five tries in each game.")
     global SAD_FACE
@@ -68,34 +69,34 @@ def Hangman(points: int) -> int:
     print(f"{player}, welcome to hangman.")
     global CELEBRATION_EMOJI
     CELEBRATION_EMOJI = ("\U0001F389")
-    guess_one: int = input("Guess a number, 1 through 10. ")
+    guess_one: int = (int(input("Guess a number, 1 through 10. ")))
     number = (randint(1, 10))
-    points: int = 0
+    points = 0
     while points < 5: 
         if guess_one == number:
             points += 1
             print(f"Wow, great job. You win! It took you {points} try.  {CELEBRATION_EMOJI}")
         else:
             points += 1
-            guess_two: int = input("Wrong. You now have a head. Guess again. You have four tries left. ")
+            guess_two: int = (int(input("Wrong. You now have a head. You have four tries left. ")))
             if guess_two == number:
                 points += 1
                 print(f"Wow, great job. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
             else:
                 points += 1
-                guess_three: int = input("Wrong. You now have a body. Guess again. You have three tries left. ")
+                guess_three: int = (int(input("Wrong. You now have a body. You have three tries left. ")))
                 if guess_three == number:
                     points += 1
                     print(f"Wow, great job. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
                 else:
                     points += 1
-                    guess_four: int = input("Wrong. You now have two arms. Guess again. You have two tries left. ")
+                    guess_four: int = (int(input("Wrong. You now have two arms. You have two tries left. ")))
                     if guess_four == number:
                         points += 1
                         print(f"Wow, great job. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
                     else:
                         points += 1
-                        guess_five: int = input("Wrong. You now have two legs. This is your last guess. ")
+                        guess_five: int = (int(input("Wrong. You now have two legs. This is your last guess. ")))
                         if guess_five == number:
                             points += 1
                             print(f"There you go. You win! It took you {points} tries. {CELEBRATION_EMOJI}")
