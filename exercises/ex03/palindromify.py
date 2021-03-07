@@ -17,7 +17,7 @@ def palindromify(word: str, even_odd: bool) -> str:
     new_word: str = ""
     while i < len(word):
         if len(word) % 2 == 0:
-            new_word = (word[:-1:1] + word[-1::-1])
+            new_word = (word + word[-1::-1])
             i += 1
         else:
             new_word = (word + (word[::-1]))
