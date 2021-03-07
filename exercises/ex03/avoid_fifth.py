@@ -12,16 +12,16 @@ def main() -> None:
 def avoid_fifth(words: str) -> str:
     """Removes e and E from all strings."""
     i: int = 0
+    new_words: str = ""
     while i < len(words):
         if words[i] == "e":
-            words.pop(i)
             i += 1
         elif words[i] == "E": 
-            words.pop(i)
             i += 1 
         else:
+            new_words += words[i]
             i += 1
-    return words
+    return new_words
 
         
 if __name__ == "__main__":
