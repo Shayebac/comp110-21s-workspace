@@ -19,11 +19,11 @@ def palindromify(word: str, even_odd: bool) -> str:
         if len(word) % 2 == 0:
             new_word = (word + word[-1::-1])
             i += 1
-        else:
+        else: 
             new_word = (word + (word[::-1]))
             i += 1
     return new_word
-
+   
 
 if __name__ == "__main__":
     main()
